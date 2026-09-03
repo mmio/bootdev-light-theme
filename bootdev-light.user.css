@@ -1,0 +1,37 @@
+/* ==UserStyle==
+@name         Boot.dev Light Theme
+@namespace    boot.dev
+@description  Light theme for Boot.dev that keeps media and SVG elements looking natural while inverting the interface.
+@author       mmio
+@version      20260829.13.55
+@license      MIT
+==/UserStyle== */
+
+@-moz-document domain("boot.dev") {
+
+    /* flips dark bg/light text to light bg/dark text while keeping original hues */
+    html {
+        filter: invert(1) hue-rotate(180deg);
+        background: #fff;
+        color-scheme: light;
+    }
+
+    /* cancel the page-wide invert so real photos/logos/videos look normal */
+    /* icon svgs using stroke/fill="currentColor" are excluded - they must track surrounding text color */
+    img,
+    picture,
+    video,
+    svg:not([stroke="currentColor"]):not([fill="currentColor"]),
+    canvas,
+    iframe {
+        filter: invert(1) hue-rotate(180deg);
+    }
+
+    /* disabled/ghost controls (e.g. pagination prev/next) often set text ~= background on purpose */
+    button:disabled,
+    button[aria-disabled="true"],
+    [role="button"][aria-disabled="true"] {
+        color: #6b7280 !important;
+        opacity: 1 !important;
+    }
+}
