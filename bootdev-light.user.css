@@ -27,6 +27,15 @@
         filter: invert(1) hue-rotate(180deg);
     }
 
+    a[href="https://twitter.com/bootdotdev"] svg,
+    a[href="https://youtube.com/@bootdotdev"] svg,
+    a[href="https://www.linkedin.com/school/bootdotdev"] svg,
+    a[href="https://instagram.com/bootdotdev"] svg,
+    a[href="https://tiktok.com/@bootdotdev"] svg,
+    a[href="https://backendbanter.fm/"] svg {
+        filter: none !important;
+    }
+
     /* disabled/ghost controls (e.g. pagination prev/next) often set text ~= background on purpose */
     button:disabled,
     button[aria-disabled="true"],
