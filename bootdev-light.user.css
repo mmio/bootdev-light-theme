@@ -3,7 +3,7 @@
 @namespace    boot.dev
 @description  Light theme for Boot.dev that keeps media and SVG elements looking natural while inverting the interface.
 @author       mmio
-@version      20260903.23.30
+@version      20260904.08.16
 @license      MIT
 ==/UserStyle== */
 
@@ -25,6 +25,14 @@
     canvas,
     iframe {
         filter: invert(1) hue-rotate(180deg);
+    }
+
+    /* company logos are white artwork and need the page inversion to remain visible */
+    img[alt="Google Logo"],
+    img[alt="Hashicorp Logo"],
+    img[alt="Stripe Logo"],
+    img[alt="Microsoft Logo"] {
+        filter: none !important;
     }
 
     a[href="https://twitter.com/bootdotdev"] svg,
